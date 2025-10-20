@@ -50,11 +50,7 @@
 
     <!-- Product Grid -->
     <div class="product-grid">
-      <div class="product-card" v-for="n in 4" :key="n">
-        <img src="../assets/nuoc_chanh.png" />
-        <h3>Nước chanh</h3>
-        <div class="price">10.000 đ</div>
-      </div>
+      <ProductCard v-for="p in products" :key="p.id" :product="p" @select="onSelectProduct" />
     </div>
     <BottomNav />
   </div>
@@ -62,16 +58,23 @@
 
 <script>
 import BottomNav from '../components/layout/bottom_nav.vue'
-import { useRouter } from 'vue-router'
-  
+import ProductCard from '../components/common/product_card.vue'
+
 export default {
   name: 'TrangChu',
   components: {
-    BottomNav
+    BottomNav,
+    ProductCard
   },
   data() {
     return {
-      searchQuery: ''
+      searchQuery: '',
+      products: [
+        { id: 1, name: 'Nước chanh', price: '10.000 đ', image: '/src/assets/nuoc_chanh.png' },
+        { id: 2, name: 'Nước chanh', price: '10.000 đ', image: '/src/assets/nuoc_chanh.png' },
+        { id: 3, name: 'Nước chanh', price: '10.000 đ', image: '/src/assets/nuoc_chanh.png' },
+        { id: 4, name: 'Nước chanh', price: '10.000 đ', image: '/src/assets/nuoc_chanh.png' }
+      ]
     }
   },
   methods: {
@@ -81,6 +84,11 @@ export default {
         query: { q: this.searchQuery }
       })
       console.log('Searching for:', this.searchQuery)
+    },
+    onSelectProduct(product) {
+      // ví dụ: chuyển sang trang chi tiết hoặc thêm vào giỏ
+      console.log('selected', product)
+      // this.$router.push({ name: 'ProductDetail', params: { id: product.id } })
     }
   }
 }
