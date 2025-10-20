@@ -92,46 +92,62 @@ export default {
 
 <style scoped>
 .trang-chu {
-  padding-bottom: 60px;
   width: 375px;
   height: 831px;
   overflow-y: auto;
   position: relative;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
   background: linear-gradient(180deg, #1E90FF 0%, #87CEFA 100%);
-  padding: 20px;
+  padding: 15px;
   color: white;
+  flex-shrink: 0;
 }
 
 .welcome {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .avatar {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
 }
 
 .banner {
   text-align: center;
-  margin: 20px 0;
+  margin: 15px 0;
 }
 
 .logo {
-  font-size: 2em;
+  font-size: 1.8em;
   font-weight: bold;
+}
+
+.slogan {
+  font-size: 0.9em;
+}
+
+.sub-slogan {
+  font-size: 0.8em;
+  margin: 5px 0;
 }
 
 .features {
   display: flex;
   justify-content: space-around;
-  margin-top: 20px;
+  margin-top: 15px;
+  font-size: 0.8em;
+}
+
+.search-bar {
+  margin: 15px 0;
+  padding: 8px;
 }
 
 .search-bar {
@@ -151,19 +167,21 @@ export default {
 }
 
 .categories {
-  padding: 20px;
+  padding: 10px;
 }
 
 .category-list {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   overflow-x: auto;
+  padding-bottom: 5px;
 }
 
 .category {
-  padding: 8px 16px;
+  padding: 6px 12px;
   background: #f0f0f0;
-  border-radius: 20px;
+  border-radius: 15px;
+  white-space: nowrap;
 }
 
 .category.active {
@@ -174,20 +192,24 @@ export default {
 .product-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  padding: 20px;
+  gap: 10px;
+  padding: 10px;
+  overflow-y: auto;
+  flex: 1;
 }
 
 .product-card {
   border: 1px solid #eee;
   border-radius: 10px;
-  padding: 10px;
+  padding: 8px;
   text-align: center;
 }
 
 .product-card img {
   width: 100%;
+  height: auto;
   border-radius: 8px;
+  object-fit: cover;
 }
 
 .bottom-nav {
@@ -199,8 +221,9 @@ export default {
   background: white;
   display: flex;
   justify-content: space-around;
-  padding: 10px;
+  padding: 8px 0;
   box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  height: 60px;
 }
 
 .nav-item {
@@ -212,5 +235,15 @@ export default {
 
 .nav-item.active {
   color: #1E90FF;
+}
+
+/* Hide scrollbar but keep functionality */
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 </style>
