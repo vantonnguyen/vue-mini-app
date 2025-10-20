@@ -1,19 +1,11 @@
 <template>
-  <div class="trang-chu">
-    <!-- Header -->
+  <div class="trang-tim-kiem">
+    <!-- Add back button -->
     <div class="header">
-      <div class="welcome">
-        <img src="../assets/avatar.png" class="avatar" />
-        <div class="welcome-text">
-          <span>Chào mừng trở lại</span>
-          <h3>ABC</h3>
-        </div>
-      </div>
-
-      <!-- iOrder Banner -->
-      <div class="banner">
-        <img src="../assets/banner.png" />
-      </div>
+      <button class="back-button" @click="goBack">
+        <span>←</span>
+      </button>
+      <h1>Tìm kiếm</h1>
     </div>
 
     <!-- Search Bar - Moved outside header -->
@@ -25,27 +17,9 @@
       </div>
     </div>
 
-    <!-- Categories -->
-    <div class="categories">
-      <h3>Danh mục sản phẩm</h3>
-      <div class="category-list">
-        <div class="category-item active">
-          <img src="../assets/menu_button.png" alt="menu_button" />
-          <span>Tất cả</span>
-        </div>
-        <div class="category-item">
-          <img src="../assets/cha_chien.png" alt="Chả chiên" />
-          <span>Chả chiên</span>
-        </div>
-        <div class="category-item">
-          <img src="../assets/cha_chien.png" alt="Chả chiên" />
-          <span>Chả chiên</span>
-        </div>
-        <div class="category-item">
-          <img src="../assets/cha_chien.png" alt="Chả chiên" />
-          <span>Chả chiên</span>
-        </div>
-      </div>
+    <!-- Add this results counter -->
+    <div class="search-results-count">
+      Kết quả: {{ searchResults.length || 0 }}
     </div>
 
     <!-- Product Grid -->
@@ -62,97 +36,83 @@
 
 <script>
 import BottomNav from '../components/bottom_nav.vue'
-import { useRouter } from 'vue-router'
-  
+
 export default {
-  name: 'TrangChu',
+  name: 'TrangTimKiem',
   components: {
     BottomNav
   },
   data() {
     return {
-      searchQuery: ''
+      searchQuery: this.$route.query.q || '',
+      searchResults: [] // Add this line
+    }
+  },
+  created() {
+    // Handle the search when component is created
+    if (this.searchQuery) {
+      this.handleSearch()
     }
   },
   methods: {
     handleSearch() {
-      this.$router.push({
-        path: '/search',
-        query: { q: this.searchQuery }
-      })
-      console.log('Searching for:', this.searchQuery)
+      // Xử lý tìm kiếm ở đây
+      console.log('Tìm kiếm:', this.searchQuery);
+    },
+    goBack() {
+      this.$router.go(-1)
     }
   }
 }
 </script>
 
 <style scoped>
-.trang-chu {
+.trang-tim-kiem {
   width: 375px;
   height: 831px;
   overflow-y: auto;
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
 }
 
 .header {
-  background: #2095F3;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 20px;
-  color: white;
-  flex-shrink: 0;
-}
-
-.welcome {
+  width: 100%;
   display: flex;
   align-items: center;
-  gap: 8px;
+  padding: 10px 15px;
+  position: relative;
 }
 
-.avatar {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  margin-left: 10px;
+.back-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px 10px;
+  color: #333;
+  position: absolute;
+  left: 15px;
 }
 
-.banner {
-  width: 100%;
+h1 {
+  flex: 1;
   text-align: center;
-  margin-left: -15px;
-  width: calc(100% + 30px);
-  margin-top: 20px;
-  background: #2095F3;
-  box-shadow: 0 4px 8px rgba(56, 55, 55, 0.2);
-  /* 👈 Bóng đổ phía dưới */
-}
-
-.banner img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  margin-bottom: 0;
-  border-top-left-radius: 35px;
-  border-top-right-radius: 35px;
-  display: block;
-}
-
-.logo {
-  font-size: 1.8em;
-  font-weight: bold;
+  font-size: 18px;
+  margin: 0;
+  color: #333;
 }
 
 .search-container {
-
   border-radius: 25px;
   padding: 0px 15px;
   display: flex;
   align-items: center;
   margin-top: -5;
   margin-bottom: 10px;
-
+  width: 100%;
 }
 
 .search-bar {
@@ -190,53 +150,10 @@ export default {
   opacity: 0.7;
 }
 
-.categories {
-  padding: 5px;
-}
-
-.categories h3 {
-  font-size: 16px;
-  margin-bottom: 15px;
-  font-weight: bold;
-}
-
-.category-list {
-  display: flex;
-  gap: 15px;
-  overflow-x: auto;
-  padding: 5px;
-  scroll-snap-type: x mandatory;
-}
-
-.category-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 70px;
-  scroll-snap-align: start;
-}
-
-.category-item img {
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
-  object-fit: cover;
-  margin-bottom: 8px;
-}
-
-.category-item span {
-  font-size: 12px;
-  text-align: center;
-  color: #333;
-}
-
-.category-item.active span {
-  color: #0066FF;
-}
-
-.category-item.active img,
-.category-item.active .category-icon {
-  border: 2px solid #0066FF;
+.search-results-count {
+  font-size: 14px;
+  color: #666;
+  margin: 10px 0;
 }
 
 .product-grid {
@@ -292,16 +209,5 @@ export default {
   color: #FF6B00;
   font-weight: bold;
   margin-bottom: 5px;
-}
-
-
-/* Hide scrollbar but keep functionality */
-::-webkit-scrollbar {
-  display: none;
-}
-
-* {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }
 </style>

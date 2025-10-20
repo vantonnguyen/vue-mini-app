@@ -4,7 +4,7 @@
       <span class="icon">🏠</span>
       <span>Trang chủ</span>
     </router-link>
-    <router-link to="/contact" class="nav-item" active-class="active">
+    <router-link to="/" class="nav-item" active-class="active">
       <img src="../assets/zalo-icon.png" class="icon" alt="zalo" style="width: 20px; height: 20px;" />
       <span>Liên hệ</span>
     </router-link>
