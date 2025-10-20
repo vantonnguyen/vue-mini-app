@@ -8,33 +8,16 @@
           <span>Chào mừng trở lại</span>
           <h3>ABC</h3>
         </div>
-        <div class="menu-button">...</div>
-        <div class="close-button">×</div>
-      </div>
-      
-      <!-- iOrder Banner -->
-      <div class="banner">
-        <div class="logo">iOrder</div>
-        <div class="slogan">PHẦN MỀM QUẢN LÝ BÁN HÀNG CHUYÊN SÂU</div>
-        <div class="sub-slogan">ĐƠN GIẢN VÀ HIỆU QUẢ</div>
-        
-        <div class="features">
-          <div class="feature">
-            <span class="icon">💰</span>
-            TIẾT KIỆM
-          </div>
-          <div class="feature">
-            <span class="icon">📱</span>
-            CHUYỂN ĐỔI SỐ
-          </div>
-          <div class="feature">
-            <span class="icon">👍</span>
-            SỬ DỤNG DỄ DÀNG
-          </div>
-        </div>
       </div>
 
-      <!-- Search Bar -->
+      <!-- iOrder Banner -->
+      <div class="banner">
+        <img src="../assets/banner.png" />
+      </div>
+    </div>
+
+    <!-- Search Bar - Moved outside header -->
+    <div class="search-container">
       <div class="search-bar">
         <span class="search-icon">🍽️</span>
         <input type="text" placeholder="Tìm kiếm món ăn, thức uống..." />
@@ -44,19 +27,31 @@
 
     <!-- Categories -->
     <div class="categories">
-      <h2>Danh mục sản phẩm</h2>
+      <h3>Danh mục sản phẩm</h3>
       <div class="category-list">
-        <div class="category active">Tất cả</div>
-        <div class="category">Chả chiên</div>
-        <div class="category">Chả chiên</div>
-        <div class="category">Chả chiên</div>
+        <div class="category-item active">
+          <img src="../assets/menu_button.png" alt="menu_button" />
+          <span>Tất cả</span>
+        </div>
+        <div class="category-item">
+          <img src="../assets/cha_chien.png" alt="Chả chiên" />
+          <span>Chả chiên</span>
+        </div>
+        <div class="category-item">
+          <img src="../assets/cha_chien.png" alt="Chả chiên" />
+          <span>Chả chiên</span>
+        </div>
+        <div class="category-item">
+          <img src="../assets/cha_chien.png" alt="Chả chiên" />
+          <span>Chả chiên</span>
+        </div>
       </div>
     </div>
 
     <!-- Product Grid -->
     <div class="product-grid">
       <div class="product-card" v-for="n in 4" :key="n">
-        <img src="../assets/nuoc-chanh.jpg" />
+        <img src="../assets/nuoc_chanh.png" />
         <h3>Nước chanh</h3>
         <div class="price">10.000 đ</div>
       </div>
@@ -101,8 +96,10 @@ export default {
 }
 
 .header {
-  background: linear-gradient(180deg, #1E90FF 0%, #87CEFA 100%);
-  padding: 15px;
+  background: #2095F3;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 20px;
   color: white;
   flex-shrink: 0;
 }
@@ -117,11 +114,27 @@ export default {
   width: 35px;
   height: 35px;
   border-radius: 50%;
+  margin-left: 10px;
 }
 
 .banner {
+  width: 100%;
   text-align: center;
-  margin: 15px 0;
+  margin-left: -15px;
+  width: calc(100% + 30px);
+  margin-top: 20px;
+  background: #2095F3;
+  box-shadow: 0 4px 8px rgba(56, 55, 55, 0.2); /* 👈 Bóng đổ phía dưới */
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 0;
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+  display: block;
 }
 
 .logo {
@@ -129,88 +142,133 @@ export default {
   font-weight: bold;
 }
 
-.slogan {
-  font-size: 0.9em;
-}
+.search-container {
 
-.sub-slogan {
-  font-size: 0.8em;
-  margin: 5px 0;
-}
-
-.features {
+  border-radius: 25px;
+  padding: 0px 15px;
   display: flex;
-  justify-content: space-around;
-  margin-top: 15px;
-  font-size: 0.8em;
-}
+  align-items: center;
+  margin-top: -5;
+  margin-bottom: 10px;
 
-.search-bar {
-  margin: 15px 0;
-  padding: 8px;
 }
 
 .search-bar {
   background: white;
   border-radius: 25px;
-  padding: 10px;
+  padding: 5px 5px;
   display: flex;
   align-items: center;
-  margin-top: 20px;
+  width: 100%;
 }
 
 .search-bar input {
+  background: white;
+  border-radius: 20px;
+  padding: 8px 12px;
   flex: 1;
   border: none;
   outline: none;
-  margin: 0 10px;
 }
 
 .categories {
-  padding: 10px;
+  padding: 5px;
+}
+
+.categories h3 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  font-weight: bold;
 }
 
 .category-list {
   display: flex;
-  gap: 8px;
+  gap: 15px;
   overflow-x: auto;
-  padding-bottom: 5px;
+  padding: 5px;
+  scroll-snap-type: x mandatory;
 }
 
-.category {
-  padding: 6px 12px;
-  background: #f0f0f0;
-  border-radius: 15px;
-  white-space: nowrap;
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 70px;
+  scroll-snap-align: start;
 }
 
-.category.active {
-  background: #1E90FF;
-  color: white;
+.category-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  object-fit: cover;
+  margin-bottom: 8px;
+}
+
+.category-item span {
+  font-size: 12px;
+  text-align: center;
+  color: #333;
+}
+
+.category-item.active span {
+  color: #0066FF;
+}
+
+.category-item.active img,
+.category-item.active .category-icon {
+  border: 2px solid #0066FF;
 }
 
 .product-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  padding: 10px;
+  gap: 15px; /* Khoảng cách đều giữa các card */
+  padding: 15px;
   overflow-y: auto;
   flex: 1;
+  margin-bottom: 60px;
+  width: 100%;
+  justify-items: center; /* Căn giữa theo chiều ngang */
+  align-content: start; /* Đảm bảo các hàng giãn đều từ trên xuống */
+  align-items: stretch; /* Các item cao bằng nhau trong hàng */
 }
 
 .product-card {
   border: 1px solid #eee;
-  border-radius: 10px;
-  padding: 8px;
+  border-radius: 8px;
   text-align: center;
+  background: white;
+  width: 165px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 190px;
+  box-sizing: border-box; /* Giúp chiều cao tính cả border + padding */
 }
 
 .product-card img {
-  width: 100%;
-  height: auto;
+  width: 80%;
+  height: 150px;
   border-radius: 8px;
   object-fit: cover;
+  margin: 0 auto;
 }
+
+.product-card h3 {
+  font-size: 13px;
+  color: #333;
+  margin: 4px 0 0 0; /* Thêm margin-top nhỏ cho cân đối */
+}
+
+.product-card .price {
+  font-size: 13px;
+  color: #FF6B00;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
 
 .bottom-nav {
   position: fixed;
@@ -222,7 +280,7 @@ export default {
   display: flex;
   justify-content: space-around;
   padding: 8px 0;
-  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
   height: 60px;
 }
 
