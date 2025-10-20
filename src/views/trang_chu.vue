@@ -61,7 +61,7 @@
 </template>
 
 <script>
-import BottomNav from '../components/bottom_nav.vue'
+import BottomNav from '../components/layout/bottom_nav.vue'
 import { useRouter } from 'vue-router'
   
 export default {
