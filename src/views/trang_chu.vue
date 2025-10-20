@@ -20,8 +20,8 @@
     <div class="search-container">
       <div class="search-bar">
         <span class="search-icon">🍽️</span>
-        <input type="text" placeholder="Tìm kiếm món ăn, thức uống..." />
-        <span class="search-button">🔍</span>
+        <input type="text" v-model="searchQuery" placeholder="Tìm kiếm món ăn, thức uống..." />
+        <button class="search-button" @click="handleSearch">🔍</button>
       </div>
     </div>
 
@@ -56,32 +56,29 @@
         <div class="price">10.000 đ</div>
       </div>
     </div>
-
-    <!-- Bottom Navigation -->
-    <nav class="bottom-nav">
-      <div class="nav-item active">
-        <span class="icon">🏠</span>
-        <span>Trang chủ</span>
-      </div>
-      <div class="nav-item">
-        <span class="icon">💬</span>
-        <span>Liên hệ</span>
-      </div>
-      <div class="nav-item">
-        <span class="icon">📋</span>
-        <span>Đơn hàng</span>
-      </div>
-      <div class="nav-item">
-        <span class="icon">👤</span>
-        <span>Tài khoản</span>
-      </div>
-    </nav>
+    <BottomNav />
   </div>
 </template>
 
 <script>
+import BottomNav from '../components/bottom_nav.vue'
+
 export default {
-  name: 'TrangChu'
+  name: 'TrangChu',
+  components: {
+    BottomNav
+  },
+  data() {
+    return {
+      searchQuery: ''
+    }
+  },
+  methods: {
+    handleSearch() {
+      // Add your search logic here
+      console.log('Searching for:', this.searchQuery)
+    }
+  }
 }
 </script>
 
@@ -124,7 +121,8 @@ export default {
   width: calc(100% + 30px);
   margin-top: 20px;
   background: #2095F3;
-  box-shadow: 0 4px 8px rgba(56, 55, 55, 0.2); /* 👈 Bóng đổ phía dưới */
+  box-shadow: 0 4px 8px rgba(56, 55, 55, 0.2);
+  /* 👈 Bóng đổ phía dưới */
 }
 
 .banner img {
@@ -169,6 +167,23 @@ export default {
   flex: 1;
   border: none;
   outline: none;
+}
+
+.search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px 5px;
+  transition: opacity 0.2s;
+  font-size: 18px;
+  /* Increase icon size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-button:hover {
+  opacity: 0.7;
 }
 
 .categories {
@@ -223,15 +238,19 @@ export default {
 .product-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px; /* Khoảng cách đều giữa các card */
+  gap: 15px;
+  /* Khoảng cách đều giữa các card */
   padding: 15px;
   overflow-y: auto;
   flex: 1;
   margin-bottom: 60px;
   width: 100%;
-  justify-items: center; /* Căn giữa theo chiều ngang */
-  align-content: start; /* Đảm bảo các hàng giãn đều từ trên xuống */
-  align-items: stretch; /* Các item cao bằng nhau trong hàng */
+  justify-items: center;
+  /* Căn giữa theo chiều ngang */
+  align-content: start;
+  /* Đảm bảo các hàng giãn đều từ trên xuống */
+  align-items: stretch;
+  /* Các item cao bằng nhau trong hàng */
 }
 
 .product-card {
@@ -245,7 +264,8 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   height: 190px;
-  box-sizing: border-box; /* Giúp chiều cao tính cả border + padding */
+  box-sizing: border-box;
+  /* Giúp chiều cao tính cả border + padding */
 }
 
 .product-card img {
@@ -259,7 +279,8 @@ export default {
 .product-card h3 {
   font-size: 13px;
   color: #333;
-  margin: 4px 0 0 0; /* Thêm margin-top nhỏ cho cân đối */
+  margin: 4px 0 0 0;
+  /* Thêm margin-top nhỏ cho cân đối */
 }
 
 .product-card .price {
