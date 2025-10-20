@@ -3,7 +3,7 @@
     <!-- Header -->
     <div class="header">
       <div class="welcome">
-        <img src="../assets/avatar.png" class="avatar" />
+        <img src="/images/avatar.png" class="avatar" />
         <div class="welcome-text">
           <span>Chào mừng trở lại</span>
           <h3>ABC</h3>
@@ -12,7 +12,7 @@
 
       <!-- iOrder Banner -->
       <div class="banner">
-        <img src="../assets/banner.png" />
+        <img src="/images/banner.png" />
       </div>
     </div>
 
@@ -30,19 +30,19 @@
       <h3>Danh mục sản phẩm</h3>
       <div class="category-list">
         <div class="category-item active">
-          <img src="../assets/menu_button.png" alt="menu_button" />
+          <img src="/images/menu_button.png" alt="menu_button" />
           <span>Tất cả</span>
         </div>
         <div class="category-item">
-          <img src="../assets/cha_chien.png" alt="Chả chiên" />
+          <img src="/images/cha_chien.png" alt="Chả chiên" />
           <span>Chả chiên</span>
         </div>
         <div class="category-item">
-          <img src="../assets/cha_chien.png" alt="Chả chiên" />
+          <img src="/images/cha_chien.png" alt="Chả chiên" />
           <span>Chả chiên</span>
         </div>
         <div class="category-item">
-          <img src="../assets/cha_chien.png" alt="Chả chiên" />
+          <img src="/images/cha_chien.png" alt="Chả chiên" />
           <span>Chả chiên</span>
         </div>
       </div>
@@ -70,10 +70,10 @@ export default {
     return {
       searchQuery: '',
       products: [
-        { id: 1, name: 'Nước chanh', price: '10.000 đ', image: '/src/assets/nuoc_chanh.png' },
-        { id: 2, name: 'Nước chanh', price: '10.000 đ', image: '/src/assets/nuoc_chanh.png' },
-        { id: 3, name: 'Nước chanh', price: '10.000 đ', image: '/src/assets/nuoc_chanh.png' },
-        { id: 4, name: 'Nước chanh', price: '10.000 đ', image: '/src/assets/nuoc_chanh.png' }
+        { id: 1, name: 'Nước chanh', price: '10.000 đ', image: '/images/nuoc_chanh.png' },
+        { id: 2, name: 'Nước chanh', price: '10.000 đ', image: '/images/nuoc_chanh.png' },
+        { id: 3, name: 'Nước chanh', price: '10.000 đ', image: '/images/nuoc_chanh.png' },
+        { id: 4, name: 'Nước chanh', price: '10.000 đ', image: '/images/nuoc_chanh.png' }
       ]
     }
   },

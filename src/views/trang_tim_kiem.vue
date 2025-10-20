@@ -25,7 +25,7 @@
     <!-- Product Grid -->
     <div class="product-grid">
       <div class="product-card" v-for="n in 4" :key="n">
-        <img src="../assets/nuoc_chanh.png" />
+        <img src="/images/nuoc_chanh.png" />
         <h3>Nước chanh</h3>
         <div class="price">10.000 đ</div>
       </div>
