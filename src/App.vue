@@ -10,7 +10,7 @@ export default {
 }
 </script>
 
-<style>
+<!-- <style>
 * {
   margin: 0;
   padding: 0;
@@ -29,5 +29,5 @@ body {
   background: #f5f5f5;
   min-height: 100vh;
 }
-</style>
+</style> -->
 

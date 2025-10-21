@@ -96,8 +96,6 @@ export default {
 
 <style scoped>
 .trang-chu {
-  width: 375px;
-  height: 831px;
   overflow-y: auto;
   position: relative;
   display: flex;
@@ -250,7 +248,7 @@ export default {
 .product-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+  gap: 10px;
   /* Khoảng cách đều giữa các card */
   padding: 15px;
   overflow-y: auto;

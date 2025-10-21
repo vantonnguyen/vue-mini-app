@@ -68,8 +68,7 @@ export default {
 
 <style scoped>
 .trang-tim-kiem {
-  width: 375px;
-  height: 831px;
+
   overflow-y: auto;
   position: relative;
   display: flex;
