@@ -17,7 +17,11 @@ name: 'CardItem'
         <div>
             <p>Sản phẩm</p>
             <div class="item flex gap-2">
+<<<<<<< HEAD
                 <img src="/images/nuoc_chanh.png" alt="Product Image" class="w-10 h-10 object-cover">
+=======
+                <img src="@/assets/nuoc_chanh.png" alt="Product Image" class="w-10 h-10 object-cover">
+>>>>>>> e731392a153a815a15a56ffd7b2ad19fddaa11bd
                 <div class="info flex justify-between w-full">
                     <div>
                         <h3 class="font-medium">Nước chanh</h3>
@@ -52,4 +56,8 @@ name: 'CardItem'
     p{
         font-size: 0.7rem;
     }
+<<<<<<< HEAD
 </style>
+=======
+</style>
+>>>>>>> e731392a153a815a15a56ffd7b2ad19fddaa11bd
