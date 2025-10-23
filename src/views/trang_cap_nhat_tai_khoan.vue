@@ -7,11 +7,7 @@ import BottomNav from '../components/layout/bottom_nav.vue'
 
     <Header title="Cập nhật tài khoản" />
     <section class="flex items-center justify-center my-4 border-b-2 border-gray-200">
-<<<<<<< HEAD
         <img src="/images/avatar.png" alt="Avatar" class=" w-20 h-20 rounded-full">
-=======
-        <img src="../assets/avatar.png" alt="Avatar" class=" w-20 h-20 rounded-full">
->>>>>>> e731392a153a815a15a56ffd7b2ad19fddaa11bd
     </section>
 
     <section class="mx-4">
@@ -67,8 +63,4 @@ import BottomNav from '../components/layout/bottom_nav.vue'
         </form>
     </section>
 
-<<<<<<< HEAD
 </template>
-=======
-</template>
->>>>>>> e731392a153a815a15a56ffd7b2ad19fddaa11bd

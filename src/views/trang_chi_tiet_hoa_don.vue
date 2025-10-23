@@ -102,11 +102,7 @@ import Header from '../components/common/header.vue';
             <section class="sanpham mx-2">
                 <h2 class="text-lg">Sản phẩm</h2>
                 <div class="item flex gap-2 border-b-2 border-gray-100 pb-2">
-<<<<<<< HEAD
                     <img src="/images/nuoc_chanh.png" alt="Product Image" class="w-15 h-15 object-cover">
-=======
-                    <img src="@/assets/nuoc_chanh.png" alt="Product Image" class="w-15 h-15 object-cover">
->>>>>>> e731392a153a815a15a56ffd7b2ad19fddaa11bd
                     <div class="info flex justify-between w-full">
                         <div>
                             <h3 class="font-medium">Nước chanh</h3>
@@ -147,8 +143,4 @@ import Header from '../components/common/header.vue';
 p {
     font-size: 0.7rem;
 }
-<<<<<<< HEAD
 </style>
-=======
-</style>
->>>>>>> e731392a153a815a15a56ffd7b2ad19fddaa11bd
