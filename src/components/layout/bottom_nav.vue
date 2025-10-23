@@ -16,7 +16,11 @@
       </router-link>
 
       <router-link to="/" class="nav-item" active-class="active">
+<<<<<<< HEAD
+        <img src="/images/zalo-icon.png" class="icon" alt="zalo" style="width: 20px; height: 20px;" />
+=======
         <img src="../assets/zalo-icon.png" class="icon" alt="zalo" style="width: 20px; height: 20px;" />
+>>>>>>> e731392a153a815a15a56ffd7b2ad19fddaa11bd
         <span>Liên hệ</span>
       </router-link>
 
