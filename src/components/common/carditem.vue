@@ -63,10 +63,9 @@ function goToDetail() {
     p{
         font-size: 0.7rem;
     }
-<<<<<<< Updated upstream
+
 </style>
-=======
-</style>
+
 
 
 
@@ -133,4 +132,4 @@ p {
   font-size: 0.7rem;
 }
 </style> -->
->>>>>>> Stashed changes
+
