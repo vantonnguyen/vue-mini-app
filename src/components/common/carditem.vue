@@ -28,7 +28,7 @@ function goToDetail() {
         <div>
             <p>Sản phẩm</p>
             <div class="item flex gap-2">
-                <img src="@/assets/nuoc_chanh.png" alt="Product Image" class="w-10 h-10 object-cover">
+                <img src="/images/nuoc_chanh.png" alt="Product Image" class="w-10 h-10 object-cover">
                 <div class="info flex justify-between w-full">
                     <div>
                         <h3 class="font-medium">Nước chanh</h3>

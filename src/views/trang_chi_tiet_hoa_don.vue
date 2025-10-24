@@ -106,13 +106,8 @@ import Header from '../components/common/header.vue';
 
             <section class="sanpham border border-gray-100 bg-white shadow-sm mx-2 ">
                 <h2 class="text-lg">Sản phẩm</h2>
-<<<<<<< Updated upstream
-                <div class="item flex gap-2 border-b-2 border-gray-100 pb-2">
-                    <img src="@/assets/nuoc_chanh.png" alt="Product Image" class="w-15 h-15 object-cover">
-=======
                 <div class="item flex gap-2 border-b-2 border-gray-100 pb-2 mx-2">
                     <img src="/images/nuoc_chanh.png" alt="Product Image" class="w-15 h-15 object-cover">
->>>>>>> Stashed changes
                     <div class="info flex justify-between w-full">
                         <div>
                             <h3 class="font-medium">Nước chanh</h3>

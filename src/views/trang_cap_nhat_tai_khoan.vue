@@ -7,7 +7,7 @@ import BottomNav from '../components/layout/bottom_nav.vue'
 
     <Header title="Cập nhật thông tin" path="/account"/>
     <section class="flex items-center justify-center my-4 border-b-2 border-gray-200">
-        <img src="../assets/avatar.png" alt="Avatar" class=" w-20 h-20 rounded-full">
+        <img src="/images/avatar.png" alt="Avatar" class=" w-20 h-20 rounded-full">
     </section>
 
     <section class="mx-4">

@@ -73,15 +73,17 @@ const quickLinks = [
           </div>
         </div>
 
-          <!-- <router-link
-            to="/account/update"
+          <!-- 
+          <router-link to="/account/update"
             class="rounded-full border border-blue-100 px-3 py-1 text-xs font-semibold text-blue-600 hover:bg-blue-50 transition"
           >
             Cap nhat
+
           </router-link> -->
            <router-link to="/account/update" class="nav-item" active-class="active">
           <p>></p>
         </router-link>
+
         </div>
       </section>
 
@@ -97,7 +99,9 @@ const quickLinks = [
               class="flex items-center justify-between gap-3 px-4 py-3 transition hover:bg-gray-50"
             >
               <div class="flex items-center gap-3">
+
                 <div class="flex  items-center justify-center  text-blue-500">
+
                   <svg
                     v-if="item.icon === 'star'"
                     xmlns="http://www.w3.org/2000/svg"
