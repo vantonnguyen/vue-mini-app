@@ -29,10 +29,10 @@ defineProps({
             </div>
 
 
-            <div class="right flex gap-1 ">
+            <!-- <div class="right flex gap-1 ">
                 <div class=" text-white">...</div>
                 <div class=" text-white">X</div>
-            </div>
+            </div> -->
         </div>
     </div>
 

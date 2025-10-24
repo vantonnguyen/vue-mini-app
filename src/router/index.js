@@ -37,6 +37,7 @@ const routes = [
     path: "/orders/detail",
     name: "TrangChiTietDonHang",
     component: TrangChiTietDonHang,
+     props: true,
   },
 ];
 

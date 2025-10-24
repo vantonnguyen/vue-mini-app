@@ -1,27 +1,32 @@
 <script setup>
 import Header from '../components/common/header.vue';
-</script>
+// import { useRoute } from 'vue-router';
+
+// const route = useRoute()
+// const orderId = route.params.id
+// console.log("Mã đơn hàng:", orderId)
+// </script>
 
 <template>
 
     <div class=" min-h-screen flex flex-col justify-between">
         <div>
             <Header title="Chi tiết đơn" path="/orders"/>
-            <section class="trangthai flex justify-between mt-2 p-2">
+            <section class="trangthai flex justify-between items-center my-2 p-2 border border-gray-100 bg-white shadow-sm mx-2">
                 <p>Trạng thái</p>
                 <div class="flex gap-2">
                     <div class=" border-0 bg-background p-1">
                         <p>Chưa thanh toán</p>
                     </div>
 
-                    <div class=" border-0 bg-background p-1">
-                        <p>Đang giao</p>
+                    <div class=" border-0 bg-orange-500 p-1">
+                        <p>Đang giao hàng</p>
                     </div>
                 </div>
             </section>
 
 
-            <section class="thongtin mx-2">
+            <section class="thongtin mx-2 border border-gray-100 bg-white shadow-sm my-2">
                 <h2 class="text-lg">Thông tin đơn hàng</h2>
                 <div class="flex justify-between p-2">
                     <div class="left">
@@ -39,7 +44,7 @@ import Header from '../components/common/header.vue';
                 </div>
             </section>
 
-            <section class="vanchuyen mx-2">
+            <section class="vanchuyen border border-gray-100 bg-white shadow-sm mx-2 mt-4 mb-2">
                 <h2 class="text-lg">Thông tin vận chuyển</h2>
                 <div class="giaohang p-2">
                     <p>Giao hàng tiết kiệm</p>
@@ -99,21 +104,32 @@ import Header from '../components/common/header.vue';
 
 
 
-            <section class="sanpham mx-2">
+            <section class="sanpham border border-gray-100 bg-white shadow-sm mx-2 ">
                 <h2 class="text-lg">Sản phẩm</h2>
+<<<<<<< Updated upstream
                 <div class="item flex gap-2 border-b-2 border-gray-100 pb-2">
                     <img src="@/assets/nuoc_chanh.png" alt="Product Image" class="w-15 h-15 object-cover">
+=======
+                <div class="item flex gap-2 border-b-2 border-gray-100 pb-2 mx-2">
+                    <img src="/images/nuoc_chanh.png" alt="Product Image" class="w-15 h-15 object-cover">
+>>>>>>> Stashed changes
                     <div class="info flex justify-between w-full">
                         <div>
                             <h3 class="font-medium">Nước chanh</h3>
-                            <p class="text-sm text-gray-600">100000</p>
+                            <p>Nước chanh</p>
                         </div>
-                        <p>x1</p>
+                        <div>
+                            <p>x1</p>
+                            <p class="text-sm text-gray-600 mt-5">100000</p>
+                        </div>
                     </div>
                 </div>
+
+
+                
             </section>
 
-            <section class="tongtien mx-2">
+            <section class="tongtien border border-gray-100 bg-white shadow-sm mx-2">
                 <h2 class="text-lg">Tổng tiền</h2>
                 <div class="flex justify-between p-2 border-b-2 border-gray-100">
                     <div class="left">

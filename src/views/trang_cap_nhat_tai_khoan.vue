@@ -5,7 +5,7 @@ import BottomNav from '../components/layout/bottom_nav.vue'
 
 <template>
 
-    <Header title="Cập nhật tài khoản" />
+    <Header title="Cập nhật thông tin" path="/account"/>
     <section class="flex items-center justify-center my-4 border-b-2 border-gray-200">
         <img src="../assets/avatar.png" alt="Avatar" class=" w-20 h-20 rounded-full">
     </section>
@@ -16,23 +16,23 @@ import BottomNav from '../components/layout/bottom_nav.vue'
         <form class="flex flex-col gap-4">
             <!-- Họ và tên -->
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Họ và tên</label>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Họ và tên <span class="text-red-500">*</span></label>
                 <input type="text" placeholder="Nhập họ và tên"
-                    class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-400 focus:outline-none" />
+                    class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-400 focus:outline-none text-gray-300" />
             </div>
 
             <!-- Số điện thoại -->
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Số điện thoại</label>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Số điện thoại<span class="text-red-500">*</span></label>
                 <input type="tel" placeholder="Nhập số điện thoại"
-                    class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-400 focus:outline-none" />
+                    class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-400 focus:outline-none text-gray-300" />
             </div>
 
             <!-- Email -->
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
                 <input type="email" placeholder="Nhập email"
-                    class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-400 focus:outline-none" />
+                    class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-400 focus:outline-none text-gray-300" />
             </div>
 
             <div class="flex justify-between sm:flex-col gap-4">
