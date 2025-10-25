@@ -10,50 +10,51 @@ const accountInfo = {
 const quickLinks = [
   {
     id: "points",
-    title: "Lich su tich diem",
-    subtitle: "Theo doi diem thuong va giao dich",
+    title: "Lịch sử tích điểm",
+    // subtitle: "Theo doi diem thuong va giao dich",
     to: "/account/points-history",
     icon: "star",
   },
   {
-    id: "saved-addresses",
-    title: "Dia chi da luu",
-    subtitle: "Quan ly dia chi giao hang",
-    to: "/account/saved-addresses",
-    icon: "location",
-  },
-  {
-    id: "new-address",
-    title: "Them dia chi moi",
-    subtitle: "Cap nhat dia chi giao hang",
-    to: "/account/address/edit",
-    icon: "plus",
-  },
-  {
     id: "promotions",
-    title: "Khuyen mai",
-    subtitle: "Uu dai danh rieng cho ban",
+    title: "Ưu đãi",
+    // subtitle: "Uu dai danh rieng cho ban",
     to: "/account/promotions",
     icon: "ticket",
   },
+  {
+    id: "saved-addresses",
+    title: "Địa chỉ đã lưu",
+    // subtitle: "Quan ly dia chi giao hang",
+    to: "/account/saved-addresses",
+    icon: "location",
+  },
+  // {
+  //   id: "new-address",
+  //   title: "Them dia chi moi",
+  //   subtitle: "Cap nhat dia chi giao hang",
+  //   to: "/account/address/edit",
+  //   icon: "plus",
+  // },
+  
 ];
 </script>
 
 <template>
   <div class="min-h-screen flex flex-col justify-between bg-gray-50">
     <div class="space-y-4 pb-4">
-      <Header title="Tai khoan" path="/" />
+      <Header title="Tài khoản" path="/" />
 
       <section class="mx-4 mt-4 rounded-2xl border border-gray-100 bg-white p-4 shadow-sm">
         <div class="flex items-center justify-between gap-3">
-          <div class="flex items-center gap-3">
+          <!-- <div class="flex items-center gap-3">
             <img
               src="/images/avatar.png"
               alt="Avatar"
               class="h-12 w-12 rounded-full object-cover"
             />
             <div>
-              <p class="text-sm text-gray-500">Xin chao,</p>
+              <p class="text-sm text-gray-500">Xin chào,</p>
               <p class="text-base font-semibold text-gray-900">
                 {{ accountInfo.name }}
               </p>
@@ -61,14 +62,28 @@ const quickLinks = [
                 SDT: {{ accountInfo.phone }}
               </p>
             </div>
-          </div>
+          </div> -->
+          
 
-          <router-link
-            to="/account/update"
+          <div class=" flex gap-2 items-center ">
+          <img src="/images/avatar.png" alt="Avatar" class=" w-10 h-10 rounded-full">
+          <div>
+            <p>Tên tài khoản</p>
+            <p class="font-medium">{{ accountInfo.phone }}</p>
+          </div>
+        </div>
+
+          <!-- 
+          <router-link to="/account/update"
             class="rounded-full border border-blue-100 px-3 py-1 text-xs font-semibold text-blue-600 hover:bg-blue-50 transition"
           >
             Cap nhat
-          </router-link>
+
+          </router-link> -->
+           <router-link to="/account/update" class="nav-item" active-class="active">
+          <p>></p>
+        </router-link>
+
         </div>
       </section>
 
@@ -84,7 +99,9 @@ const quickLinks = [
               class="flex items-center justify-between gap-3 px-4 py-3 transition hover:bg-gray-50"
             >
               <div class="flex items-center gap-3">
-                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-50 text-blue-500">
+
+                <div class="flex  items-center justify-center  text-blue-500">
+
                   <svg
                     v-if="item.icon === 'star'"
                     xmlns="http://www.w3.org/2000/svg"
